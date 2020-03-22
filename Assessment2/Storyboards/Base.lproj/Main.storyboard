@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EhR-wh-BDI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shopping List-->
+        <scene sceneID="izl-q2-dwa">
+            <objects>
+                <tableViewController id="uMV-YP-Vgv" customClass="ItemListTableViewController" customModule="Assessment2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AhF-x3-yOP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="40" id="L8o-nH-oJ3" customClass="ItemTableViewCell" customModule="Assessment2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L8o-nH-oJ3" id="1yN-NG-wja">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oXE-VO-nRy">
+                                            <rect key="frame" x="20" y="11" width="374" height="18"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjV-bw-vfi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRQ-OB-XVE">
+                                                    <rect key="frame" x="192" y="0.0" width="182" height="18"/>
+                                                    <inset key="imageEdgeInsets" minX="150" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" image="incomplete"/>
+                                                    <connections>
+                                                        <action selector="completeButtonTapped:" destination="L8o-nH-oJ3" eventType="touchUpInside" id="iHx-rx-MNu"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oXE-VO-nRy" firstAttribute="leading" secondItem="1yN-NG-wja" secondAttribute="leadingMargin" id="AOS-9r-4aH"/>
+                                        <constraint firstItem="oXE-VO-nRy" firstAttribute="trailing" secondItem="1yN-NG-wja" secondAttribute="trailingMargin" id="U4Q-ks-3tl"/>
+                                        <constraint firstItem="oXE-VO-nRy" firstAttribute="top" secondItem="1yN-NG-wja" secondAttribute="topMargin" id="lcl-tu-7vO"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="oXE-VO-nRy" secondAttribute="bottom" id="uhK-qo-qE0"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="completeButton" destination="ZRQ-OB-XVE" id="Lzn-Mc-v1B"/>
+                                    <outlet property="itemLabel" destination="NjV-bw-vfi" id="tft-65-yvf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uMV-YP-Vgv" id="3B7-Et-KAj"/>
+                            <outlet property="delegate" destination="uMV-YP-Vgv" id="zMd-0j-NRY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Shopping List" id="CRt-yG-DUl">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="ZYc-K8-Lh6">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="uMV-YP-Vgv" id="iZR-Ls-99g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9c-rX-MyH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="229" y="136"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Z53-he-l4v">
+            <objects>
+                <navigationController id="EhR-wh-BDI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ixf-P1-mZP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uMV-YP-Vgv" kind="relationship" relationship="rootViewController" id="keG-7d-5tn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ia-Fn-Q0W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-494" y="136"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="incomplete" width="512" height="512"/>
+    </resources>
+</document>
